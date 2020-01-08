@@ -1,0 +1,82 @@
+/** Task App
+
+variables, pseudo elementos
+
+*/
+
+::-webkit-scrollbar{
+    transition: all;
+}
+
+.circle-done {
+    --main-bg-color: #4fd1c5;
+}
+.circle-danger {
+    --main-bg-color: #f6e05e;
+}
+.circle-none {
+    --main-bg-color: #e2e8f0;
+}
+
+.circle-list-md {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.circle-list-md::after {
+    content: "";
+    position: absolute;
+    left: -3rem;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--main-bg-color);
+}
+
+.circle-list-sm {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.circle-list-sm::after {
+    content: "";
+    position: absolute;
+    left: -3rem;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--main-bg-color);
+}
+
+/** Switch-------------------------------------*/
+
+.switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+.switch {
+    display: inline-block;
+    font-size: 15px;
+    height: 1em;
+    width: 2em;
+    background: #e2e8f0;
+    border-radius: 1em;
+}
+
+.switch div {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background: #fff;
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    transition: all 300ms;
+}
+
+.switch input:checked + div {
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}

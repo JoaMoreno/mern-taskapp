@@ -1,0 +1,129 @@
+/** Task App
+
+variables, pseudo elementos
+
+*/
+.doble-shadow{
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -8px 10px 0 #ffffffb6,
+    8px 8px 12px 0 #cfd4db;
+}
+.doble-shadow-white{
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -8px 10px 0 #ffffffb6,
+    8px 8px 12px 0 #cfd4db;
+}
+
+.scrollbar::-webkit-scrollbar{
+    display: none;
+}
+.shadow-task{
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.circle-done {
+    --main-bg-color: #4fd1c5;
+}
+.circle-danger {
+    --main-bg-color: #f6e05e;
+}
+.circle-none {
+    --main-bg-color: #e2e8f0;
+}
+
+.circle-list-md {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.circle-list-md::after {
+    content: "";
+    position: absolute;
+    left: -3rem;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--main-bg-color);
+}
+
+.circle-list-sm {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.circle-list-sm::after {
+    content: "";
+    position: absolute;
+    left: -3rem;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--main-bg-color);
+}
+
+/** Switch-------------------------------------*/
+
+.switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+.switch {
+    display: inline-block;
+    font-size: 15px;
+    height: 1em;
+    width: 2em;
+    background: #e2e8f0;
+    border-radius: 1em;
+}
+
+.switch div {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background: #fff;
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    transition: all 300ms;
+}
+
+.switch input:checked + div {
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+
+.no-seleccionable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.swal-button {
+    outline: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    color: white;
+    padding: 7px 19px;
+    border-radius: 0.25rem;
+    background-color: #38b2ac;
+    font-size: 1rem;
+    border: none;
+}
+.swal-button--cancel:hover{
+    color: #38b2ac;
+}
+
+.swal-button--cancel {
+    outline: none;
+    font-weight: 400;
+    color: white;
+    padding: 7px 19px;
+    border-radius: 0.25rem;
+    background-color: #38b2ac;
+    font-size: 1rem;
+    border: none;
+}
