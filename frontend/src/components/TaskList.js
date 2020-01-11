@@ -252,6 +252,13 @@ export default class TaskList extends Component {
             });
         }
     }
+    circleStatus = (e) =>{
+        if(e){
+            return("circle-list-sm circle-done")
+        }else{
+            return("circle-list-sm circle-none")
+        }
+    }
 
     render() {
 
@@ -319,7 +326,8 @@ export default class TaskList extends Component {
                                                     onDoubleClick={()=>this.deleteConfirm(subtask._id,"subtask")}
                                                     className="mt-3 md:flex px-4 py-3 bg-white rounded shadow-task"
                                                     key={subtask._id}>
-                                                    <div className="circle-list-sm circle-none "></div>
+                                                    <div className={"circle-list-sm"}></div>
+                                                    //<div className={'wrapper searchDiv' + (this.state.something === "a" ? " anotherClass" : "")'}>
                                                     {/* Contend Task secondary */}
                                                     <div className="md:w-3/4 text-sm text-gray-600">
                                                         <p>{subtask.content}</p>
