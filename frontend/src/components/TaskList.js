@@ -106,8 +106,19 @@ export default class TaskList extends Component {
         );
     }
 
-    statusTask = (status) =>{
-        if(status){
+    statusTask = (task) =>{
+        const totalStatus = task.subtasks.map(p => p.status);
+        let statusFalse = false;
+        let statusTrue = false;
+        totalStatus.forEach(element => {
+            if(!element){
+                statusFalse=true
+            }else{
+                statusTrue=true
+            }
+        });
+        //Agregar la peticion PUT para guardar el estado
+        if(!statusFalse && statusTrue){
             return ("Complete")
         }else{
             return("Incomplete")
@@ -250,14 +261,8 @@ export default class TaskList extends Component {
                     status: true
                 }
             });
-        }
-    }
-    circleStatus = (e) =>{
-        if(e){
-            return("circle-list-sm circle-done")
-        }else{
-            return("circle-list-sm circle-none")
-        }
+        };
+        this.getTasks(this.props.project_id);
     }
 
     render() {
@@ -301,7 +306,7 @@ export default class TaskList extends Component {
                                                 {/* Status */}
                                                 <div>
                                                     <p className="text-xs">Status:</p>
-                                                    <h1>{this.statusTask(task.status)}</h1>
+                                                    <h1>{this.statusTask(task)}</h1>
                                                 </div>
                                                 {/* Date */}
                                                 <div>
@@ -326,8 +331,8 @@ export default class TaskList extends Component {
                                                     onDoubleClick={()=>this.deleteConfirm(subtask._id,"subtask")}
                                                     className="mt-3 md:flex px-4 py-3 bg-white rounded shadow-task"
                                                     key={subtask._id}>
-                                                    <div className={"circle-list-sm"}></div>
-                                                    //<div className={'wrapper searchDiv' + (this.state.something === "a" ? " anotherClass" : "")'}>
+                                                        {/* Conditional in className inline */}
+                                                    <div className={"circle-list-sm "+(subtask.status ? "circle-done":"circle-none")}></div>
                                                     {/* Contend Task secondary */}
                                                     <div className="md:w-3/4 text-sm text-gray-600">
                                                         <p>{subtask.content}</p>
@@ -336,7 +341,13 @@ export default class TaskList extends Component {
                                                     <div className="flex md:justify-end justify-between md:mt-1 mt-3 items-center md:w-1/4 ml-3">
                                                         {/* Button checkbox */}
                                                         <div className="container-switch mr-8">
-                                                            <label className="switch"><input onClick={()=>this.buttonChecked(subtask.status,subtask._id)} type="checkbox" defaultChecked={subtask.status} /><div></div>
+                                                            <label 
+                                                            className="switch">
+                                                                <input 
+                                                                onClick={()=>this.buttonChecked(subtask.status,subtask._id)} 
+                                                                type="checkbox" 
+                                                                defaultChecked={subtask.status}/>
+                                                                <div></div>
                                                             </label>
                                                         </div>
                                                         {/* Date */}
