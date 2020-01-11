@@ -28,6 +28,7 @@ router.post("/task/populate/:id",addedCtrl.projectInTask); // need id of task
  router.route("/subtask/:id")
  .post(subtaskCtrl.createData)
  .delete(subtaskCtrl.deleteData)
+ .put(subtaskCtrl.EditSubTask)
 
 router.post("/subtask/populate/:id",subtaskCtrl.TaskInSubTask); // need id of task
 

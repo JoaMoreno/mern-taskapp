@@ -233,6 +233,26 @@ export default class TaskList extends Component {
         this.getTasks(this.props.project_id);
     }
 
+    buttonChecked = async(e,id) =>{
+        if(e){
+            await axios({
+                method: 'put',
+                url: 'http://localhost:4200/api/subtask/' + id,
+                data: {
+                    status: false
+                }
+            });
+        }else{
+            await axios({
+                method: 'put',
+                url: 'http://localhost:4200/api/subtask/' + id,
+                data: {
+                    status: true
+                }
+            });
+        }
+    }
+
     render() {
 
         return (
@@ -308,7 +328,7 @@ export default class TaskList extends Component {
                                                     <div className="flex md:justify-end justify-between md:mt-1 mt-3 items-center md:w-1/4 ml-3">
                                                         {/* Button checkbox */}
                                                         <div className="container-switch mr-8">
-                                                            <label className="switch"><input type="checkbox" id="checked" />    <div></div>
+                                                            <label className="switch"><input onClick={()=>this.buttonChecked(subtask.status,subtask._id)} type="checkbox" defaultChecked={subtask.status} /><div></div>
                                                             </label>
                                                         </div>
                                                         {/* Date */}

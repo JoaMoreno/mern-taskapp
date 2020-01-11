@@ -32,6 +32,13 @@ subtaskCtrl.createData = async (req, res, next) => {
     return res.json(subtaskById);
 };
 
+subtaskCtrl.EditSubTask = async(req, res) => {
+    const { id } = req.params;
+    console.log(req.body);
+    const updated = await SubTasks.findByIdAndUpdate(id,req.body)
+    return res.json(updated)
+}
+
 subtaskCtrl.TaskInSubTask = async (req, res) => {
     const { id } = req.params;
     const TaskBySubTask = await SubTasks.findById(id).populate('task_prima');
