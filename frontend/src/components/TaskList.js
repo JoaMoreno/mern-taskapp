@@ -329,7 +329,7 @@ export default class TaskList extends Component {
 
                                                 <div
                                                     onDoubleClick={()=>this.deleteConfirm(subtask._id,"subtask")}
-                                                    className="mt-3 md:flex px-4 py-3 bg-white rounded shadow-task"
+                                                    className="mt-3 md:flex px-4 py-3 bg-white rounded-lg border-t border-b"
                                                     key={subtask._id}>
                                                         {/* Conditional in className inline */}
                                                     <div className={"circle-list-sm "+(subtask.status ? "circle-done":"circle-none")}></div>
