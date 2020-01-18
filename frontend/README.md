@@ -1,3 +1,25 @@
+> BUGS:
+- [ ] !!BUG!! Al eliminar queda el nombre del proyecto anterior
+- [x] (FIXED) Responsive TaskList
+  - [ ] !!BUG!! overflow generado por la taskList en panel izquierdo
+- [x] (FIXED) Conseguir el project_id desde PROPS onMount / error no id create task
+- [x] (FIXED) EL Subtask Tiene que estar dentro de Tasks
+- [x] (FIXED) !!Optimizar!! Crear en routes.js get only one !! / getTasks() / else {}
+
+> TAREAS:
+- [x] (DONE) Completar boton add Task
+- [x] (DONE) Completar boton add SubTask
+- [x] (DONE) Funcionalidad toggle class circle-done/danger/none / Task status
+  - [x] (DONE) Funcionalidad Status toggle Complete/incomplete / Task
+  - [x] (DONE) Funcionalidad checkbox / Subtask
+- [ ] Agregar plugin add Date (fechas limites)
+- [ ] Funcionalidad set state / CreatedAt
+- [x] (DONE) Funcionalidad deleteTask & deleteSubTask
+- [ ] Method PUT subtask
+- [ ] Add PUT method to statusTask()
+
+
+##
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
