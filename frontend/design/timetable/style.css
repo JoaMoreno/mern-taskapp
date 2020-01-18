@@ -2,3 +2,10 @@
     min-height: 50vh;
     max-height: 80vh;
 }
+
+.container-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: 64px;
+}
