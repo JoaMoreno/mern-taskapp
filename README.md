@@ -28,3 +28,8 @@
 - [ ] Agregar la peticion PUT para guardar el estado en statusTask()
 ### In design
 ![preview-taskapp](https://user-images.githubusercontent.com/57602106/72286199-6b4a2d00-3623-11ea-8783-a693f67cc89d.jpg)
+
+## Environment Variables
+This app needs the following environment Variables
+- `PORT` Express port
+- `MONGODB_URI` this is the Mongodb URI string
