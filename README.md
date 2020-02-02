@@ -10,6 +10,7 @@
 - [x] `FIXED` !!Optimizar!! onChangeProjectName esta actualizando TasksList
 - [x] `FIXED` EL Subtask Tiene que estar dentro de Tasks
 - [x] `FIXED` !!Optimizar!! Crear en routes.js get only one !! / getTasks() / else {}
+- [ ] **`BUG`** Errores al cambiar de sweetAlert a SweetAlert2
 
 > TAREAS:
 - [x] `DONE` Completar boton add Task
