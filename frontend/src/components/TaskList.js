@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import swal from '@sweetalert/with-react'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const swal = withReactContent(Swal)
 
 export default class TaskList extends Component {
 
@@ -15,10 +18,10 @@ export default class TaskList extends Component {
 
     /** TAREAS
      * (DONE) > Completar boton add Task
-     * (DONE)Completar boton add SubTask
-     * Funcionalidad toggle class circle-done/danger/none > Task status
-          * Funcionalidad Status toggle Complete/incomplete > Task
-          * Funcionalidad checkbox > Subtask
+     * (DONE) > Completar boton add SubTask
+     * (DONE) > Funcionalidad toggle class circle-done/danger/none > Task status
+          * (DONE) > Funcionalidad Status toggle Complete/incomplete > Task
+          * (DONE) > Funcionalidad checkbox > Subtask
      * Agregar plugin add Date (fechas limites)
      * Funcionalidad set state > CreatedAt
      * (DONE) > Funcionalidad deleteTask & deleteSubTask
@@ -81,7 +84,7 @@ export default class TaskList extends Component {
     }
 
     createTask = () => {
-        swal(
+        swal.fire(
             <form
                 onSubmit={this.onSubmitTask}
                 className="mt-10 mx-10">
@@ -126,7 +129,7 @@ export default class TaskList extends Component {
     }
 
     deleteConfirm = (id,type) => {
-        swal({
+        swal.fire({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this task!",
             icon: "warning",
@@ -219,7 +222,7 @@ export default class TaskList extends Component {
     }
 
     createSubTask = (id) => {
-        swal(
+        swal.fire(
             <form
                 onSubmit={this.onSubmitSubTask}
                 className="mt-5 mx-10">
@@ -329,7 +332,7 @@ export default class TaskList extends Component {
 
                                                 <div
                                                     onDoubleClick={()=>this.deleteConfirm(subtask._id,"subtask")}
-                                                    className="mt-3 md:flex px-4 py-3 bg-white rounded-lg border-t border-b"
+                                                    className="mt-3 md:flex px-4 py-3 bg-white border-t border-b"
                                                     key={subtask._id}>
                                                         {/* Conditional in className inline */}
                                                     <div className={"circle-list-sm "+(subtask.status ? "circle-done":"circle-none")}></div>

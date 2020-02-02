@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import TaskList from './TaskList'
-import swal from '@sweetalert/with-react'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import TimeTable from "./TimeTable"
+
+const swal = withReactContent(Swal)
+
 /**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  * 
  * !!Optimizar!!
@@ -46,7 +51,7 @@ export default class CreateProject extends Component {
     }
 
     deleteConfirm = (id) => {
-        swal({
+        swal.fire({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this project!",
             icon: "warning",
@@ -74,13 +79,22 @@ export default class CreateProject extends Component {
     }
 
     thanksYou = () => {
-        swal(
+        swal.fire(
             <div className="p-2 text-sm">
                 <h1 className="text-xl">Thank you!</h1>
                 <p>This is my first App</p>
                 <i className="pt-2 fas fa-heart text-red-400"></i>
             </div>, { buttons: false, timer: 3000 }
         )
+    }
+
+    timeTable = () => {
+        swal.fire(
+            <div><TimeTable/></div>
+            ,{
+                width: 400,
+            buttons: false,
+            });
     }
 
     render() {
@@ -137,6 +151,10 @@ export default class CreateProject extends Component {
                                 )
                             }
                         </ul>
+
+                        <div>
+                            <button onClick={() => this.timeTable()} className="bg-teal-500 rounded px-2 py-1 text-white shadow">TimeTable</button>
+                        </div>
                     </div>
 
                     <div className="md:fixed w-full bottom-0 no-seleccionable"><div className="flex md:justify-end md:mx-5 justify-center py-1 text-gray-500 text-xs">

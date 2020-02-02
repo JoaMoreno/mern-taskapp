@@ -127,3 +127,7 @@ variables, pseudo elementos
     font-size: 1rem;
     border: none;
 }
+
+.swal-wide{
+    width:50px !important;
+}
