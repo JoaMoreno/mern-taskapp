@@ -18,15 +18,19 @@
 - [x] `DONE` Funcionalidad toggle class circle-done/danger/none / Task status
   - [x] `DONE` Funcionalidad Status toggle Complete/incomplete / Task
   - [x] `DONE` Funcionalidad checkbox / Subtask
+  - [ ] light & dark mode
 - [ ] Agregar plugin add Date (fechas limites)
 - [ ] Funcionalidad set state / CreatedAt
 - [x] `DONE` Funcionalidad deleteTask & deleteSubTask
 - [ ] Method PUT subtask
 - [ ] Add PUT method to statusTask()
+- [ ] !!Optimizar!! Extract components Tailwind css
+- [ ] Enrutamiento correctamente React
 
 ### Backend
 > TAREAS:
 - [ ] Agregar la peticion PUT para guardar el estado en statusTask()
+
 ### In design
 ![preview-taskapp](https://user-images.githubusercontent.com/57602106/72286199-6b4a2d00-3623-11ea-8783-a693f67cc89d.jpg)
 
